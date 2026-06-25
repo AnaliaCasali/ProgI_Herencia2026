@@ -1,6 +1,6 @@
 package entities;
 
-public class Empleado {
+public abstract class Empleado {
 
 
     private int id;
@@ -86,4 +86,9 @@ public class Empleado {
         return "Empleado:" + this.id + " - " + this.apellido + " " + this.nombre
                 + "\n Salario: " + this.salarioBase + "\n" ;
     }
+
+    public abstract void mostrarTipoEmpleado();
+
+
+
 }

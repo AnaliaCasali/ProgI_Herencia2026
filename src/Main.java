@@ -1,6 +1,7 @@
 import entities.Desarrollador;
 import entities.Empleado;
 import entities.Gerente;
+import interfaces.Versionado;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -9,6 +10,7 @@ public class Main {
 
 
      Empleado[] empleados = new Empleado[3];
+
 
     Gerente gerente = new Gerente("Jose","Gonzalez",1954789.22,100000);
     Desarrollador dev1= new Desarrollador("Maria","Lopez", 1200000,"Java");
@@ -21,13 +23,24 @@ public class Main {
         empleados[0]=dev1;
         empleados[1]=dev2;
         empleados[2]=gerente;
-
+/*
         for (int i=0; i<empleados.length; i++){
                 empleados[i].mostrarInformacion();
         }
+*/
+            // FOREACH por cada empleado en la lista de empleados muestro la info
+        for(Empleado e: empleados){
+            e.mostrarInformacion();
+        }
 
 
+        // metodo estatico se llama con el nombre de la clase y no desde un objeto
+        Versionado.mostrarVersionStatic();
+        dev1.mostrarversion();
+        System.out.println( dev2.mostrarVersionDefault());
     }
+
+
 }
 
 /*

@@ -53,4 +53,9 @@ public class Gerente extends Empleado {
                 " Salario Total:" + this.calcularSalario();
     }
 
+    @Override
+    public void mostrarTipoEmpleado() {
+        System.out.printf("Soy un Gerente");
+    }
+
 }

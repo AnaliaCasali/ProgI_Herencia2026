@@ -1,6 +1,9 @@
 package entities;
 
-public class Desarrollador extends Empleado {
+import interfaces.Imprimible;
+import interfaces.Versionado;
+
+public class Desarrollador extends Empleado implements Imprimible, Versionado {
 
     /** Clase Hija (Subclase): Desarrollador
      Atributos propios: lenguajePrincipal (String)
@@ -44,4 +47,24 @@ public class Desarrollador extends Empleado {
         return super.toString() +  " Lenguaje principal: " + this.lenguajePrincipal + "\n" ;
     }
 
+    @Override
+    public void mostrarTipoEmpleado() {
+        System.out.printf("Soy un Desarrollador");
+    }
+
+
+    @Override
+    public void elegirImpresora() {
+        System.out.printf("Printer 1");
+    }
+
+    @Override
+    public void mostrarImpresora() {
+        System.out.printf("Printer 2");
+    }
+
+    @Override
+    public void mostrarversion() {
+        System.out.printf("App version 1");
+    }
 }
