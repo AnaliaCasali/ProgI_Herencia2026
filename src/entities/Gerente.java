@@ -58,4 +58,6 @@ public class Gerente extends Empleado {
         System.out.printf("Soy un Gerente");
     }
 
+
+
 }

@@ -1,6 +1,7 @@
 import entities.Desarrollador;
 import entities.Empleado;
 import entities.Gerente;
+import enums.Provincia;
 import interfaces.Versionado;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -11,6 +12,7 @@ public class Main {
 
      Empleado[] empleados = new Empleado[3];
 
+     Provincia miProvincia = Provincia.SANTA_FE;
 
     Gerente gerente = new Gerente("Jose","Gonzalez",1954789.22,100000);
     Desarrollador dev1= new Desarrollador("Maria","Lopez", 1200000,"Java");
@@ -38,6 +40,23 @@ public class Main {
         Versionado.mostrarVersionStatic();
         dev1.mostrarversion();
         System.out.println( dev2.mostrarVersionDefault());
+
+            // obtengo todos los valores del ENUM con VALUES()
+        Provincia[] provincias = Provincia.values();
+
+        // POR CADA PROCINCIA EN EL ARRAY DE PROVINCIAS
+        for(Provincia p: provincias){
+            //
+            System.out.println(p.toString());
+            // ORDINAL
+            System.out.println("Ordinal " + p.ordinal());
+            //NAME
+            System.out.println("Provincia " + p.name());
+
+
+        }
+
+
     }
 
 

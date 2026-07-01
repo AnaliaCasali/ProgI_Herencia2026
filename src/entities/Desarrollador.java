@@ -3,6 +3,8 @@ package entities;
 import interfaces.Imprimible;
 import interfaces.Versionado;
 
+import java.util.Objects;
+
 public class Desarrollador extends Empleado implements Imprimible, Versionado {
 
     /** Clase Hija (Subclase): Desarrollador
@@ -66,5 +68,19 @@ public class Desarrollador extends Empleado implements Imprimible, Versionado {
     @Override
     public void mostrarversion() {
         System.out.printf("App version 1");
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Desarrollador otroObjeto = (Desarrollador) o;
+        return Objects.equals(lenguajePrincipal, otroObjeto.lenguajePrincipal) &&
+                Objects.equals(this.getNombre(), otroObjeto.getNombre() ) &&
+                Objects.equals(this.getApellido(), otroObjeto.getApellido() );
+    }
+
+    @Override
+    public int hashCode() {
+        return 1;
     }
 }
