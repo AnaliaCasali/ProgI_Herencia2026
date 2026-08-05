@@ -15,6 +15,7 @@ public class mainList {
         asistencia.add("jeremias");
         asistencia.add("Ivan");
         asistencia.add("Rodrigo");
+
         System.out.println("------RECORRO LISTA ASISTENCIA CON FOREACH-----------");
         for(String nombre: asistencia){
             System.out.println(nombre);
@@ -37,7 +38,7 @@ public class mainList {
             // next() tomar el elemento
             System.out.println(it.next());
         }
-
+    // devuelve V o F
         System.out.println( "asistio Ivo?" +  asistencia.contains("Ivo"));
         System.out.println( "asistio Serena?" +  asistencia.contains("Serena"));
 
