@@ -70,8 +70,6 @@ public class mainList {
                         dev2,
                         new Desarrollador("Pedro","Gomez", 1100000,"PHP")
                         );
-
-
     }
 
 }
