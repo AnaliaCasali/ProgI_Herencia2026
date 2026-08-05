@@ -5,7 +5,7 @@ import interfaces.Versionado;
 
 import java.util.Objects;
 
-public class Desarrollador extends Empleado implements Imprimible, Versionado {
+public class Desarrollador extends Empleado implements Imprimible, Versionado, Comparable {
 
     /** Clase Hija (Subclase): Desarrollador
      Atributos propios: lenguajePrincipal (String)
@@ -81,6 +81,24 @@ public class Desarrollador extends Empleado implements Imprimible, Versionado {
 
     @Override
     public int hashCode() {
-        return 1;
+        return Objects.hashCode
+                (this.getNombre() + this.getApellido() + lenguajePrincipal);
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        /// -1 menor , 0 igual, 1 mayor
+        // creo un desarrollador  a partir del objeto
+        Desarrollador otroDev = (Desarrollador) o;
+
+        int resultado= this.getApellido().compareTo(otroDev.getApellido());
+        // si los apellidos son iguales sigo comparando
+        if (resultado==0) {
+            resultado = this.getNombre().compareTo(otroDev.getNombre());
+            // si apellido y nombre son iguales comparo lenguaje
+            if (resultado==0)
+                resultado= this.lenguajePrincipal.compareTo(otroDev.lenguajePrincipal);
+            }
+        return resultado;
     }
 }
