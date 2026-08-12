@@ -13,14 +13,12 @@ public class mainSets {
         setAsistencia.add("Ivo");
         setAsistencia.add("Serena");
 
-
-    //     Set.of("Serena", "Jeremias", "Ivo", "Rodrigo","Serena", "Jeremias", "Ivo", "Rodrigo");
-
+        //Set.of("Serena", "Jeremias", "Ivo", "Rodrigo","Serena", "Jeremias", "Ivo", "Rodrigo");
         //recorro el set: por cada elemento en el set de asistencia
+
         for(String elemento: setAsistencia ){
             System.out.println(elemento);
         }
-
 
         Desarrollador dev1= new Desarrollador("Maria","Lopez", 1200000,"Java");
         Desarrollador dev2= new Desarrollador("Juan","Lopez", 1200000,"Java");
