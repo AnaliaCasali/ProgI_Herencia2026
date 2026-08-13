@@ -1,8 +1,6 @@
 import entities.Desarrollador;
 
-import java.util.ArrayDeque;
-import java.util.Collection;
-import java.util.Iterator;
+import java.util.*;
 
 public class mainQueue {
 
@@ -59,6 +57,50 @@ public class mainQueue {
 
         System.out.println("---------Desarrolladores con PEEKLAST ----------");
         System.out.println(desarrolladores.peekLast().toString());
+
+        // tamaño
+        System.out.println("tamaño " +  desarrolladores.size());
+
+
+        // lista con prioridad
+        System.out.println("Desarrolladores con EN LISTA CON PRIORIDAD");
+
+        PriorityQueue<Desarrollador> desarrolladoresConPrioridad=
+                new PriorityQueue<>();
+//        PriorityQueue<Desarrollador> desarrolladoresConPrioridad=
+  //                      new PriorityQueue<>(Collections.reverseOrder());
+        // PARA INVERTIR LA PRIORIDAD   ORDENAR DESCENDENTEMENTE  USO Collections.reverseOrder()
+
+        // agrego elementos a la queue con prioridad
+        desarrolladoresConPrioridad.offer(dev1);
+//        desarrolladoresConPrioridad.offer(dev1);
+        desarrolladoresConPrioridad.offer(dev2);
+        desarrolladoresConPrioridad.offer(dev3);
+        desarrolladoresConPrioridad.offer(dev4);
+        desarrolladoresConPrioridad.offer(
+        new Desarrollador("Juana", "Manso",5546846,"PHP"));
+        desarrolladoresConPrioridad.offer(
+        new Desarrollador("Maria", "Becerra", 987654651, "HTML"));
+
+        mostrarCollection(desarrolladoresConPrioridad);
+
+        // quita
+        System.out.println("LUEGO DE POOL");
+        desarrolladoresConPrioridad.poll(); // quita el ultimo
+        mostrarCollection(desarrolladoresConPrioridad);
+
+        System.out.println("PROBANDO PEEK");
+        System.out.println( desarrolladoresConPrioridad.peek());
+        //OBTIENE EL PRIMER ELEMENTO
+
+        // PRIORITYQUEUE
+        // INSERTAR: por prioridad definida en compareTo
+        // CONSULTAR: peek obtengo el primero
+        // ELIMINAR: pool  remueve el ultimo elemento
+        // COMPORTAMIENTO DE COLA
+
+        //desarrolladoresConPrioridad.clear(); // elimina todos los elementos
+
 
 
     }// cierra el main
